@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --color-brand-teal: #13617e;
+  --color-brand-light: #2da1ca;
+  --color-brand-dark: #092c3a;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, .font-heading, .font-display {
+  font-family: var(--font-display);
+}
+

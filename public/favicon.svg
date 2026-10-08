@@ -1,0 +1,45 @@
+<svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grozixOuterFavicon" x1="10%" y1="90%" x2="90%" y2="10%">
+      <stop offset="0%" stop-color="#0d3f52" />
+      <stop offset="100%" stop-color="#1b7a99" />
+    </linearGradient>
+    <linearGradient id="facetTopFavicon" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#25a2c7" />
+      <stop offset="100%" stop-color="#4fd1f0" />
+    </linearGradient>
+    <linearGradient id="facetBotFavicon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a3545" />
+      <stop offset="100%" stop-color="#13617e" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer G Band -->
+  <path
+    d="M 83.94 22 A 44 44 0 1 0 76 85.50 L 76 62.85 A 29 29 0 1 1 57.55 22 Z"
+    fill="url(#grozixOuterFavicon)"
+  />
+
+  <!-- Upper Highlight Facet -->
+  <path
+    d="M 36 40 L 53 38 L 72 58 Z"
+    fill="url(#facetTopFavicon)"
+  />
+
+  <!-- Lower Shade Facet -->
+  <path
+    d="M 36 40 L 46 56 L 72 58 Z"
+    fill="url(#facetBotFavicon)"
+  />
+
+  <!-- Spine Crease -->
+  <line
+    x1="36"
+    y1="40"
+    x2="72"
+    y2="58"
+    stroke="rgba(255, 255, 255, 0.5)"
+    stroke-width="1.2"
+    stroke-linecap="round"
+  />
+</svg>

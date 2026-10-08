@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grozix — UI Design Canvas (All Artboards)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      /* Embedded self-contained styling for Figma HTML-to-Design */
+      *, ::before, ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e2e8f0;
+      }
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        tab-size: 4;
+        font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background-color: #1E1E1E;
+        color: #0f172a;
+        font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1, h2, h3, h4, .font-heading {
+        font-family: 'Outfit', system-ui, sans-serif;
+      }
+      .font-mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      /* Figma Canvas Top Bar */
+      .figma-toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #2C2C2C;
+        border-bottom: 1px solid #383838;
+        padding: 12px 24px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .figma-toolbar-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .figma-chip {
+        background: #13617e;
+        color: white;
+        font-family: monospace;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 8px;
+        border-radius: 6px;
+      }
+      .figma-badge {
+        background: #383838;
+        color: #67e8f9;
+        font-family: monospace;
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 999px;
+        border: 1px solid #484848;
+      }
+
+      /* Canvas Layout */
+      .canvas-viewport {
+        max-width: 1560px;
+        margin: 0 auto;
+        padding: 48px 24px 120px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
+      .artboard-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .artboard-label-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4px;
+        color: #cbd5e1;
+      }
+      .artboard-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+      .artboard-pill {
+        background: #13617e;
+        color: #ffffff;
+        font-family: monospace;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 6px;
+      }
+      .artboard-dims {
+        font-family: monospace;
+        font-size: 11px;
+        color: #67e8f9;
+        background: #282828;
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid #3a3a3a;
+      }
+
+      /* Artboard Paper (1440px Desktop) */
+      .artboard-frame {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        background: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        box-shadow: 0 25px 60px -15px rgba(0,0,0,0.7);
+        overflow: hidden;
+      }
+
+      /* Utilities & Layout */
+      .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+      .max-w-4xl { max-width: 56rem; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+      .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+      .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+      .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+
+      @media (max-width: 1024px) {
+        .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 640px) {
+        .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      }
+
+      .btn-teal {
+        background: #13617e;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        cursor: pointer;
+      }
+      .btn-white {
+        background: #ffffff;
+        color: #0f172a;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 13px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cbd5e1;
+        cursor: pointer;
+      }
+      .card-white {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      .card-slate {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+      }
+      .badge-teal {
+        background: #f0fdfa;
+        border: 1px solid #ccfbf1;
+        color: #13617e;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 600;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Figma Canvas Header -->
+    <header class="figma-toolbar">
+      <div class="figma-toolbar-title">
+        <span class="figma-chip">FIG</span>
+        <div>
+          <strong style="font-size: 14px;">Grozix UI Design Canvas</strong>
+          <span class="figma-badge">11 Artboards / 1440px Desktop</span>
+        </div>
+      </div>
+      <div>
+        <span style="font-size: 12px; color: #94a3b8; font-family: monospace;">Self-Contained Figma Artboards</span>
+      </div>
+    </header>
+
+    <!-- Main Canvas (#1E1E1E) -->
+    <main class="canvas-viewport">
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 01: HOMEPAGE -->
+      <!-- =================================================================== -->
+      <section id="screen-01" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 01</span>
+            <span>Homepage — Full Agency Architecture, Proof & Services</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <!-- Navigation Bar -->
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="display: flex; gap: 24px; font-size: 14px; font-weight: 500; color: #475569;">
+              <span style="color: #0f172a; font-weight: 700;">Home</span>
+              <span>Services</span>
+              <span style="color: #13617e;">AI Search & GEO <small class="badge-teal">NEW</small></span>
+              <span>Google & Meta Ads</span>
+              <span>Industries</span>
+            </div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Free Audit</button>
+          </nav>
+
+          <!-- Hero Section -->
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 60%, #f8fafc 100%); border-bottom: 1px solid #e2e8f0; padding: 72px 32px;">
+            <div class="max-w-7xl" style="display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center;">
+              <div>
+                <div style="font-size: 12px; font-weight: 700; color: #13617e; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">
+                  Performance SEO · Generative AI (GEO) · Google & Meta Ads
+                </div>
+                <h1 style="font-size: 52px; font-weight: 800; line-height: 1.1; color: #0f172a; margin: 0 0 20px 0;">
+                  Search and Paid Media Engineered for the <span style="color: #13617e;">AI Era.</span>
+                </h1>
+                <p style="font-size: 18px; color: #475569; line-height: 1.6; margin: 0 0 28px 0;">
+                  Grozix builds predictable customer acquisition engines. We position your brand at the top of Google Search and Google Maps, optimize your entities for ChatGPT and Gemini citations, and scale high-return Google and Meta ad campaigns.
+                </p>
+                <div style="display: flex; gap: 14px; margin-bottom: 40px;">
+                  <button class="btn-teal">Request Free Channel Audit</button>
+                  <button class="btn-white">Explore Capabilities & Rates</button>
+                </div>
+                <div class="grid-4" style="border-top: 1px solid #e2e8f0; padding-top: 28px;">
+                  <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">$48M+</strong><div style="font-size: 12px; color: #64748b;">Client Revenue</div></div>
+                  <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">4.2x</strong><div style="font-size: 12px; color: #64748b;">Average ROAS</div></div>
+                  <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">YMYL Policy Pass</div></div>
+                  <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">380+</strong><div style="font-size: 12px; color: #64748b;">Page #1 Rankings</div></div>
+                </div>
+              </div>
+              <div>
+                <div class="card-white" style="padding: 12px; border: 1px solid #cbd5e1;">
+                  <img src="/src/assets/images/hero_agency_workspace_1791369610998.jpg" alt="Agency Headquarters" style="width: 100%; height: auto; border-radius: 8px;" />
+                  <div style="margin-top: 12px; padding: 12px; background: #f8fafc; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <div><span style="font-size: 12px; color: #64748b;">Telemetry</span><div style="font-weight: 700; font-size: 14px;">Healthcare & E-Commerce</div></div>
+                    <span class="badge-teal">+284% Organic Inbound</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Core Services Section -->
+          <section style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 64px 32px;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">01. Service Architecture</span>
+              <h2 style="font-size: 38px; font-weight: 800; color: #0f172a; margin: 12px 0 28px 0;">Organic Discovery and Algorithmic Authority.</h2>
+              <div class="grid-3">
+                <div class="card-white">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="font-family: monospace; color: #94a3b8;">01.</span>
+                    <span class="badge-teal">&lt; 0.8s LCP</span>
+                  </div>
+                  <h3 style="font-size: 18px; margin: 0 0 8px 0; color: #0f172a;">Technical SEO Engineering</h3>
+                  <p style="font-size: 13px; color: #64748b; line-height: 1.6;">Crawl budget optimization, JavaScript hydration, server log forensics, and schema markup.</p>
+                </div>
+                <div class="card-white">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="font-family: monospace; color: #94a3b8;">02.</span>
+                    <span class="badge-teal">Top 3 Map Pack</span>
+                  </div>
+                  <h3 style="font-size: 18px; margin: 0 0 8px 0; color: #0f172a;">Local Maps & Proximity SEO</h3>
+                  <p style="font-size: 13px; color: #64748b; line-height: 1.6;">Dominating Google Maps 3-Pack across multi-location service radius with verified reviews.</p>
+                </div>
+                <div class="card-white">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                    <span style="font-family: monospace; color: #94a3b8;">03.</span>
+                    <span class="badge-teal">94% Citations</span>
+                  </div>
+                  <h3 style="font-size: 18px; margin: 0 0 8px 0; color: #0f172a;">Generative Engine (GEO)</h3>
+                  <p style="font-size: 13px; color: #64748b; line-height: 1.6;">Optimizing entity knowledge graphs to ensure ChatGPT, Gemini, and Perplexity cite your brand.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer style="background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 48px 32px; font-size: 12px; color: #64748b;">
+            <div class="max-w-7xl" style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: #0f172a; font-family: 'Outfit'; font-size: 16px;">GROZIX</strong>
+                <p style="margin: 4px 0 0 0;">Performance Search, AI SEO & Paid Media Agency</p>
+              </div>
+              <div style="font-family: monospace;">© 2026 Grozix. All rights reserved. YMYL & HIPAA Safe.</div>
+            </div>
+          </footer>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 02: SERVICES DIRECTORY HUB -->
+      <!-- =================================================================== -->
+      <section id="screen-02" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 02</span>
+            <span>Services Directory Hub — 27-Service Catalog Taxonomy</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <span style="color: #13617e; font-weight: 700;">Services Directory Catalog</span>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Free Audit</button>
+          </nav>
+
+          <section style="background: white; padding: 48px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">Master Taxonomy</span>
+              <h1 style="font-size: 44px; font-weight: 800; color: #0f172a; margin: 12px 0;">Complete Services Directory</h1>
+              <p style="color: #64748b; font-size: 16px;">27 specialized service delivery blueprints covering Core SEO, Generative AI Search, Google Ads, Meta Ads, and CMS Platforms.</p>
+            </div>
+          </section>
+
+          <section style="background: #f8fafc; padding: 48px 32px;">
+            <div class="max-w-7xl grid-3">
+              <div class="card-white"><span class="badge-teal">Core SEO</span><h3 style="margin: 8px 0;">Technical SEO</h3><p style="font-size: 13px; color: #64748b;">Crawl budget, Core Web Vitals, and indexation architecture.</p></div>
+              <div class="card-white"><span class="badge-teal">Core SEO</span><h3 style="margin: 8px 0;">Local SEO & Maps</h3><p style="font-size: 13px; color: #64748b;">Google Maps 3-Pack and geo-targeted service area rank.</p></div>
+              <div class="card-white"><span class="badge-teal">Core SEO</span><h3 style="margin: 8px 0;">On-Page Optimization</h3><p style="font-size: 13px; color: #64748b;">Titles, headings, topic clusters, and semantic PageRank.</p></div>
+              <div class="card-white"><span class="badge-teal">AI SEO</span><h3 style="margin: 8px 0;">Generative Engine (GEO)</h3><p style="font-size: 13px; color: #64748b;">Direct citations in ChatGPT, Gemini, and Perplexity.</p></div>
+              <div class="card-white"><span class="badge-teal">AI SEO</span><h3 style="margin: 8px 0;">Answer Engine (AEO)</h3><p style="font-size: 13px; color: #64748b;">Structured answers for voice assistants and AI Overviews.</p></div>
+              <div class="card-white"><span class="badge-teal">Paid Media</span><h3 style="margin: 8px 0;">Google Ads Management</h3><p style="font-size: 13px; color: #64748b;">Search, Shopping, Performance Max, and YouTube Ads.</p></div>
+              <div class="card-white"><span class="badge-teal">Paid Media</span><h3 style="margin: 8px 0;">Meta Ads Advantage+</h3><p style="font-size: 13px; color: #64748b;">Advantage+ Shopping, Lead Forms, and UGC Video Ads.</p></div>
+              <div class="card-white"><span class="badge-teal">Ecommerce</span><h3 style="margin: 8px 0;">Shopify Enterprise SEO</h3><p style="font-size: 13px; color: #64748b;">Collection canonicals, liquid theme speed, and rich snippets.</p></div>
+              <div class="card-white"><span class="badge-teal">Verticals</span><h3 style="margin: 8px 0;">Healthcare Clinic Practice</h3><p style="font-size: 13px; color: #64748b;">Dental, aesthetic, and medical clinics with YMYL compliance.</p></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 03: TECHNICAL SEO PAGE -->
+      <!-- =================================================================== -->
+      <section id="screen-03" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 03</span>
+            <span>Service — Technical SEO & Core Web Vitals</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Services / <strong style="color: #13617e;">Technical SEO</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Technical Audit</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">Core SEO Services · Grozix Dedicated Practice</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">Technical SEO & Crawl Budget Engineering</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Fix speed, crawlability, indexing barriers, and complex site architecture so Google and AI search systems index your high-value pages effortlessly.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">&lt; 0.8s</strong><div style="font-size: 12px; color: #64748b;">Average LCP</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">Clean Canonical Index</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">+140%</strong><div style="font-size: 12px; color: #64748b;">Crawl Efficiency</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">0 Errors</strong><div style="font-size: 12px; color: #64748b;">Render-Blocking</div></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Problem / Solution / Outcome -->
+          <section style="background: #ffffff; padding: 48px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl grid-3">
+              <div style="background: #fff1f2; border: 1px solid #fecdd3; border-radius: 12px; padding: 20px;">
+                <strong style="color: #9f1239; font-size: 13px; text-transform: uppercase;">The Core Bottleneck</strong>
+                <p style="font-size: 13px; color: #4c0519; margin-top: 8px; line-height: 1.6;">Slow server response times, convoluted JavaScript rendering, and broken internal redirects drain crawl budget.</p>
+              </div>
+              <div style="background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 12px; padding: 20px;">
+                <strong style="color: #13617e; font-size: 13px; text-transform: uppercase;">The Grozix Methodology</strong>
+                <p style="font-size: 13px; color: #042f2e; margin-top: 8px; line-height: 1.6;">120-point technical remediation covering Core Web Vitals, server caching, canonicalization, and XML sitemaps.</p>
+              </div>
+              <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; padding: 20px;">
+                <strong style="color: #065f46; font-size: 13px; text-transform: uppercase;">Target Outcome</strong>
+                <p style="font-size: 13px; color: #064e3b; margin-top: 8px; line-height: 1.6;">Lightning-fast technical foundation that search bots can crawl and index without hesitation.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Deliverables -->
+          <section style="background: #f8fafc; padding: 48px 32px;">
+            <div class="max-w-7xl">
+              <h2 style="font-size: 28px; margin-bottom: 24px;">Included Technical Deliverables</h2>
+              <div class="grid-3">
+                <div class="card-white"><span class="badge-teal">01 · SLA Verified</span><h4 style="margin: 10px 0 6px 0;">Core Web Vitals Optimization</h4><p style="font-size: 13px; color: #64748b;">Minimizing LCP, INP, and CLS scores into green Google thresholds.</p></div>
+                <div class="card-white"><span class="badge-teal">02 · SLA Verified</span><h4 style="margin: 10px 0 6px 0;">Server Log Analysis</h4><p style="font-size: 13px; color: #64748b;">Identifying bot crawl traps, infinite redirect loops, and server 5xx error spikes.</p></div>
+                <div class="card-white"><span class="badge-teal">03 · SLA Verified</span><h4 style="margin: 10px 0 6px 0;">JavaScript Rendering & DOM</h4><p style="font-size: 13px; color: #64748b;">Ensuring client-side dynamic frameworks correctly deliver rendered HTML.</p></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 04: LOCAL SEO & MAPS -->
+      <!-- =================================================================== -->
+      <section id="screen-04" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 04</span>
+            <span>Service — Local SEO & Google Maps 3-Pack Domination</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Services / <strong style="color: #13617e;">Local SEO</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Local Audit</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">Local SEO Practice</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">Local SEO & Google Maps Pack Domination</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Get found in high-intent local searches and dominate the coveted Google Maps 3-Pack across all target neighborhoods and service areas.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">#1 - #3</strong><div style="font-size: 12px; color: #64748b;">Maps Position</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">+210%</strong><div style="font-size: 12px; color: #64748b;">Direct Calls</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">NAP Uniformity</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">4.9★</strong><div style="font-size: 12px; color: #64748b;">Review Benchmark</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 05: GENERATIVE ENGINE OPTIMIZATION (GEO) -->
+      <!-- =================================================================== -->
+      <section id="screen-05" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 05</span>
+            <span>Service — Generative Engine Optimization (GEO)</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Services / <strong style="color: #13617e;">Generative Engine (GEO)</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Benchmark AI Citations</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">AI SEO Specialization</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">GEO for ChatGPT, Gemini & Perplexity</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Position your brand as the cited, recommended authority inside ChatGPT, Perplexity, Google Gemini, and Claude AI responses.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">Top 1-3</strong><div style="font-size: 12px; color: #64748b;">AI Citation Rank</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">94%</strong><div style="font-size: 12px; color: #64748b;">Entity Accuracy</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">+310%</strong><div style="font-size: 12px; color: #64748b;">LLM Referrals</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">GPTBot Verified</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 06: GOOGLE ADS PAGE -->
+      <!-- =================================================================== -->
+      <section id="screen-06" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 06</span>
+            <span>Service — Google Ads Management (PMax & Search)</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Services / <strong style="color: #13617e;">Google Ads</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Google Ads Audit</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">Paid Acquisition</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">Google Ads Management & Scaling</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Capture ready-to-buy customers at the precise moment of intent with Search, Shopping, Performance Max, and YouTube ad campaigns built for high ROAS.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">4.2x</strong><div style="font-size: 12px; color: #64748b;">Average ROAS</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">-32%</strong><div style="font-size: 12px; color: #64748b;">Wasted Spend</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">$12M+</strong><div style="font-size: 12px; color: #64748b;">Ad Spend Managed</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">First-Party CAPI</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 07: META ADS PAGE -->
+      <!-- =================================================================== -->
+      <section id="screen-07" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 07</span>
+            <span>Service — Meta Ads (Facebook & Instagram Advantage+)</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Services / <strong style="color: #13617e;">Meta Ads</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Meta Audit</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">Paid Media</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">High-Converting Meta Ads (Facebook & Instagram)</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Stop the scroll and convert cold audiences into loyal customers with Advantage+ Shopping, high-performing creative hooks, and automated lead funnels.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">3.8x</strong><div style="font-size: 12px; color: #64748b;">Ecom ROAS</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">$18</strong><div style="font-size: 12px; color: #64748b;">Patient Lead CPA</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">CAPI Match Rate</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">14 Days</strong><div style="font-size: 12px; color: #64748b;">Testing Cadence</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 08: SHOPIFY ECOMMERCE SEO -->
+      <!-- =================================================================== -->
+      <section id="screen-08" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 08</span>
+            <span>Service — Enterprise Shopify SEO Architecture</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Services / <strong style="color: #13617e;">Shopify SEO</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Shopify Audit</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">Ecommerce SEO</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">Enterprise Shopify SEO & Collection Architecture</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Overcome Shopify default URL limitations, eliminate duplicate tag indexation, optimize collection pages, and accelerate organic store sales.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">+190%</strong><div style="font-size: 12px; color: #64748b;">Organic Revenue</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">Canonicals Cleaned</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">&lt; 1.2s</strong><div style="font-size: 12px; color: #64748b;">Liquid Theme Load</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">5-Star</strong><div style="font-size: 12px; color: #64748b;">Product Schema</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 09: HEALTHCARE PRACTICE (YMYL) -->
+      <!-- =================================================================== -->
+      <section id="screen-09" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 09</span>
+            <span>Industry Practice — Healthcare, Dental & Clinic Acquisition (YMYL)</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Industries / <strong style="color: #13617e;">Healthcare & Clinics</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Clinic Growth Plan</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">Healthcare Vertical Practice</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">Healthcare, Dental & Clinic Practice (YMYL)</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Patient acquisition architecture: verified clinician authorship, HIPAA-compliant tracking, and local Maps 3-Pack domination.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">+284%</strong><div style="font-size: 12px; color: #64748b;">Patient Bookings</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">HIPAA Compliant</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">Top 3</strong><div style="font-size: 12px; color: #64748b;">Local Maps Rank</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">0 Flags</strong><div style="font-size: 12px; color: #64748b;">Meta Ad Policy</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 10: E-COMMERCE DTC SCALING PRACTICE -->
+      <!-- =================================================================== -->
+      <section id="screen-10" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 10</span>
+            <span>Industry Practice — E-Commerce & DTC Scaling Practice</span>
+          </div>
+          <span class="artboard-dims">1440 × AUTO</span>
+        </div>
+
+        <div class="artboard-frame">
+          <nav style="background: rgba(255,255,255,0.95); border-bottom: 1px solid #e2e8f0; padding: 18px 32px; display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="width: 160px; height: 42px; overflow: hidden; display: flex; align-items: center; justify-content: center;"><img src="https://i.postimg.cc/zvcttqT1/Logo-Variations-06.png" alt="User Image" style="width: 100%; height: 100%; object-fit: contain; transform: scale(3.2); transform-origin: center center;" /></div>
+            </div>
+            <div style="font-size: 13px; color: #64748b;">Home / Industries / <strong style="color: #13617e;">E-Commerce DTC</strong></div>
+            <button class="btn-teal" style="padding: 8px 18px; font-size: 12px;">Request Store Audit</button>
+          </nav>
+
+          <section style="background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); padding: 56px 32px; border-bottom: 1px solid #e2e8f0;">
+            <div class="max-w-7xl">
+              <span class="badge-teal">DTC Retail Growth</span>
+              <h1 style="font-size: 46px; font-weight: 800; color: #0f172a; margin: 12px 0;">E-Commerce DTC Scaling Practice</h1>
+              <p style="font-size: 17px; color: #475569; max-width: 800px; line-height: 1.6;">Full-funnel customer acquisition for high-volume stores, blending organic category rankings with high-ROAS Shopping & Meta ads.</p>
+              <div class="grid-4" style="margin-top: 32px; border-top: 1px solid #e2e8f0; padding-top: 24px;">
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">4.2x</strong><div style="font-size: 12px; color: #64748b;">Blended ROAS</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">+210%</strong><div style="font-size: 12px; color: #64748b;">Organic Inbound</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">100%</strong><div style="font-size: 12px; color: #64748b;">Product Schema</div></div>
+                <div><strong style="font-size: 28px; font-family: monospace; color: #0f172a;">48h</strong><div style="font-size: 12px; color: #64748b;">Roadmap SLA</div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- SCREEN 11: 48-HOUR GROWTH AUDIT DIALOG & FORM -->
+      <!-- =================================================================== -->
+      <section id="screen-11" class="artboard-container">
+        <div class="artboard-label-row">
+          <div class="artboard-title">
+            <span class="artboard-pill">Screen 11</span>
+            <span>Interactive Component — 48-Hour Growth Audit Dialog & Lead Form</span>
+          </div>
+          <span class="artboard-dims">800 × AUTO (Modal State)</span>
+        </div>
+
+        <div class="artboard-frame" style="background: #252525; padding: 64px 32px; display: flex; justify-content: center;">
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 16px; width: 100%; max-width: 680px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); overflow: hidden;">
+            <div style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+                  <path d="M 64 36 A 32 32 0 1 0 54 82 A 32 32 0 0 0 82 54 L 82 48" stroke="#13617e" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M 46 43 L 83 43 L 83 80 L 64 62 L 46 43 Z" fill="#13617e" />
+                </svg>
+                <div>
+                  <h3 style="font-size: 15px; font-weight: 700; margin: 0; color: #0f172a;">Request Free Grozix Growth & Channel Audit</h3>
+                  <p style="font-size: 11px; color: #64748b; margin: 2px 0 0 0;">Customized roadmap delivered in 48 hours · Zero sales pressure</p>
+                </div>
+              </div>
+              <span style="font-size: 11px; font-family: monospace; background: #e2e8f0; padding: 3px 8px; border-radius: 4px; color: #475569;">ESC / CLOSE</span>
+            </div>
+
+            <div style="padding: 28px 24px;">
+              <label style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: #475569; display: block; margin-bottom: 8px;">Select Channels to Audit</label>
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px;">
+                <div style="background: #13617e; color: white; padding: 8px; font-size: 11px; font-weight: 600; border-radius: 6px; text-align: center;">Core SEO</div>
+                <div style="background: #13617e; color: white; padding: 8px; font-size: 11px; font-weight: 600; border-radius: 6px; text-align: center;">AI SEO & GEO</div>
+                <div style="background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; padding: 8px; font-size: 11px; font-weight: 600; border-radius: 6px; text-align: center;">Google Ads</div>
+                <div style="background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; padding: 8px; font-size: 11px; font-weight: 600; border-radius: 6px; text-align: center;">Meta Ads</div>
+              </div>
+
+              <div class="grid-2" style="margin-bottom: 16px;">
+                <div>
+                  <label style="font-size: 12px; font-weight: 600; color: #334155; display: block; margin-bottom: 4px;">Website URL</label>
+                  <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 13px; font-family: monospace; color: #0f172a;">https://clinic-practice.com</div>
+                </div>
+                <div>
+                  <label style="font-size: 12px; font-weight: 600; color: #334155; display: block; margin-bottom: 4px;">Industry Sector</label>
+                  <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 13px; color: #0f172a;">Healthcare (Dental, Aesthetic, Clinics)</div>
+                </div>
+              </div>
+
+              <div class="grid-2" style="margin-bottom: 16px;">
+                <div>
+                  <label style="font-size: 12px; font-weight: 600; color: #334155; display: block; margin-bottom: 4px;">Your Name</label>
+                  <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 13px; color: #0f172a;">Dr. Sarah Collins</div>
+                </div>
+                <div>
+                  <label style="font-size: 12px; font-weight: 600; color: #334155; display: block; margin-bottom: 4px;">Work Email</label>
+                  <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 13px; font-family: monospace; color: #0f172a;">sarah@clinicpractice.com</div>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <label style="font-size: 12px; font-weight: 600; color: #334155; display: block; margin-bottom: 4px;">Monthly Budget Bracket</label>
+                <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 13px; color: #0f172a;">$5,000 - $20,000 / mo (Growth Stage)</div>
+              </div>
+
+              <button class="btn-teal" style="width: 100%; padding: 14px; font-size: 13px;">Generate Free Strategic Audit Roadmap (48h) →</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
