@@ -1,4 +1,5 @@
 import React from 'react';
+import heroAgencyImg from '../assets/images/hero_agency_workspace_1791369610998.jpg';
 
 interface HeroProps {
   onOpenAuditModal: () => void;
@@ -86,7 +87,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAuditModal }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-2xl bg-white group">
               <img
-                src="/src/assets/images/hero_agency_workspace_1791369610998.jpg"
+                src={heroAgencyImg}
                 alt="Grozix performance marketing analytics operations headquarters"
                 className="w-full h-auto object-cover aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"

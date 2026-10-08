@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import aiSearchGeoImg from '../assets/images/ai_search_geo_studio_1791369622939.jpg';
 
 interface AiGeoShowcaseProps {
   onOpenAuditModal: () => void;
@@ -55,7 +56,7 @@ export const AiGeoShowcase: React.FC<AiGeoShowcaseProps> = ({ onOpenAuditModal }
           <div className="lg:col-span-5 space-y-6">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
               <img
-                src="/src/assets/images/ai_search_geo_studio_1791369622939.jpg"
+                src={aiSearchGeoImg}
                 alt="Grozix Generative Engine Optimization and AI citation intelligence"
                 className="w-full h-auto object-cover aspect-[16/10] group-hover:scale-105 transition-transform duration-500"
                 referrerPolicy="no-referrer"

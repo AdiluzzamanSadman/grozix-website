@@ -1,3 +1,6 @@
+import caseHealthcareClinicImg from '../assets/images/case_healthcare_clinic_1791369645355.jpg';
+import caseEcommerceStoreImg from '../assets/images/case_ecommerce_store_1791369634860.jpg';
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -316,7 +319,7 @@ export const INDUSTRIES: IndustryItem[] = [
     seoFocus: 'Local SEO + AI SEO (GBP, Maps, Doctor Schema)',
     adsPlatform: 'Google + Meta Ads (High-intent search & patient booking)',
     complianceNote: 'Strict YMYL & Medical Ad Compliance: Expert doctor author profiles, verified claims, and HIPAA-safe tracking.',
-    image: '/src/assets/images/case_healthcare_clinic_1791369645355.jpg',
+    image: caseHealthcareClinicImg,
     caseMetric: '+310% qualified patient bookings in 4 months',
     headlineSummary: 'Dominating local maps and patient trust while staying 100% Google YMYL & Meta medical policy compliant.',
   },
@@ -329,7 +332,7 @@ export const INDUSTRIES: IndustryItem[] = [
     seoFocus: 'Ecommerce SEO + Technical (Collection architecture, Product schema, LLM citations)',
     adsPlatform: 'Google + Meta Ads (PMax, Advantage+ Shopping, Dynamic Catalogs)',
     complianceNote: 'Supplement & health claims require rigorous ingredient disclosures and FTC/ad policy compliance.',
-    image: '/src/assets/images/case_ecommerce_store_1791369634860.jpg',
+    image: caseEcommerceStoreImg,
     caseMetric: '4.8x Blended ROAS across $1.2M ad spend',
     headlineSummary: 'Technical storefront architecture paired with aggressive Advantage+ and PMax catalog acquisition.',
   },
